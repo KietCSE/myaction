@@ -28082,7 +28082,7 @@ async function run() {
         // Add changes and commit
         await exec.exec('git', ['add', '.']);
         await exec.exec('git', ['commit', '-m', 'New bot commit']);
-        await exec.exec('git', ['push', '-u', 'origin', 'main'], {
+        await exec.exec('git', ['push', '-u', 'origin', 'master'], {
             env: { GITHUB_TOKEN: token }
         });
     } catch (err) {
