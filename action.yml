@@ -6,7 +6,7 @@ inputs:
     default: "KietCSE" 
   email: 
     required: true 
-    default: ${{ secret.EMAIL }}
+    default: ${{ secrets.EMAIL }}
   token: 
     required: true
 runs: 
