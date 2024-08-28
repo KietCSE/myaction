@@ -1358,7 +1358,7 @@ async function run() {
         });
     }
     catch (err) {
-        core.setFailed(err)
+        core.setFailed(`Action failed with error ${err}`);
     }
 }
 
