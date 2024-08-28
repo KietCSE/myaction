@@ -6,7 +6,7 @@ inputs:
     default: "KietCSE" 
   email: 
     required: true 
-    default: "ptkiet170104@gmail.com" 
+    default: ${{ secret.EMAIL }}
   token: 
     required: true
 runs: 
