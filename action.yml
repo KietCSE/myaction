@@ -1,0 +1,14 @@
+name: "Commit action" 
+description: "This is an action to create a commit to your repo" 
+inputs: 
+  username:
+    required: true
+    default: "KietCSE" 
+  email: 
+    required: true 
+    default: "ptkiet170104@gmail.com" 
+  token: 
+    required: true
+runs: 
+  using: "node20"
+  main: "action/index.js"
