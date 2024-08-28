@@ -1,13 +1,13 @@
-const core = require('@actions/core')
-const exec = require('@actions/exec')
+const core = require('@actions/core');
+const exec = require('@actions/exec');
 
 async function run() {
     try {
-        const username = core.getInput('username')
-        const email = core.getInput('email')
-        const token = core.getInput('token')
+        const username = core.getInput('username');
+        const email = core.getInput('email');
+        const token = core.getInput('token');
     
-         // Configure git
+        // Configure git
         await exec.exec('git', ['config', '--global', 'user.name', username]);
         await exec.exec('git', ['config', '--global', 'user.email', email]);
     
@@ -17,11 +17,9 @@ async function run() {
         await exec.exec('git', ['push', '-u', 'origin', 'main'], {
             env: { GITHUB_TOKEN: token }
         });
-    }
-    catch (err) {
-        core.setFailed(`Action failed with error ${err}`);
+    } catch (err) {
+        core.setFailed(err.message);
     }
 }
 
-run()
-
+run();
